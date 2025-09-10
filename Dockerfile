@@ -34,7 +34,8 @@ ARG REPO_REF=master
 # Clone the requested Signbank repository
 RUN git clone --depth 1 --branch ${REPO_REF} ${REPO_URL} /app
 
-COPY default.py /app/signbank/settings/server_specific/
+#COPY default.py /app/signbank/settings/server_specific/
+COPY signbank.settings /app/signbank
 
 # Install Python dependencies. Try common locations used across forks.
 # Also install gunicorn for production serving if not already specified.
@@ -63,5 +64,6 @@ EXPOSE 8000
 # if you need a different entrypoint. Database must be reachable at runtime.
 #	python /app/bin/develop.py collectstatic --noinput || true; \
 CMD sh -c "\
-	python /app/bin/develop.py migrate --noinput || true; \
+	python /app/bin/develop.py migrate --noinput --settings=/app/signbank/signbank.settings || true; \
     exec gunicorn django.core.wsgi:get_wsgi_application --bind 127.0.0.1:${PORT} --workers 3"
+

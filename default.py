@@ -1,8 +1,8 @@
 # Where the Signbank installation lives on your server
-ROOT = '/var/www/'
+ROOT = '/app'
 
 # Where the code is (where you did git clone)
-BASE_DIR = 'repo/'
+BASE_DIR = '/app/signbank'
 
 # Where Signbank can store things like images and videos
 WRITABLE_FOLDER = 'writable/'

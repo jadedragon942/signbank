@@ -1,0 +1,31 @@
+# Database settings
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'signbank',
+        'USER': 'signbank_user',
+        'PASSWORD': 'your_password_here',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+
+# Secret key (generate a new one)
+SECRET_KEY = 'your-secret-key-here'
+
+# Debug mode (set to False in production)
+DEBUG = True
+
+# Allowed hosts
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'your-domain.com']
+
+# Media and static files
+MEDIA_ROOT = '/app/signbank/media/'
+STATIC_ROOT = '/app/signbank/static/'
+
+# Redis settings
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+
+# Video settings
+FFMPEG_PROGRAM = '/usr/bin/ffmpeg'
