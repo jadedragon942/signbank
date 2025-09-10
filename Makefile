@@ -14,4 +14,4 @@ inspect:
 	docker run --rm -it --entrypoint sh signbank -c "find /app -maxdepth 4 -name 'develop.py' -o -name 'manage.py' | cat"
 
 wipe:
-	docker ps -a | awk '{print }' | xargs -n 1 docker rm -f
+	docker ps -a | awk '{print $$1}' | xargs -n 1 docker rm -f
