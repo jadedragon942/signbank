@@ -1,2 +1,0 @@
-# signbank
-signbank installer
